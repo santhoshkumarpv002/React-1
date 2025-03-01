@@ -15,7 +15,9 @@ steps:
       - 'managed'
       - '--region'
       - '${_REGION}'
-      - '--allow-unauthenticated'
+      - '--allow-unauthenticated' 
+      - '--port'
+      - '3000'
 
 options:
   # machineType: 'e2-standard-2'
