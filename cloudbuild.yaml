@@ -108,13 +108,13 @@ steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['run', 'deploy', '${_SERVICE_NAME}-${_DEPLOY_REGION_3}', '--image', 'gcr.io/${PROJECT_ID}/${_SERVICE_NAME}', '--region', '${_DEPLOY_REGION_3}', '--allow-unauthenticated', '--port', '3000']
 
-  # Step 4: Set IAM policy bindings for unauthenticated access
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['run', 'services', 'add-iam-policy-binding', '${_SERVICE_NAME}-${_DEPLOY_REGION_1}', '--member="allUsers"', '--role="roles/run.invoker"', '--region=${_DEPLOY_REGION_1}']
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['run', 'services', 'add-iam-policy-binding', '${_SERVICE_NAME}-${_DEPLOY_REGION_2}', '--member="allUsers"', '--role="roles/run.invoker"', '--region=${_DEPLOY_REGION_2}']
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['run', 'services', 'add-iam-policy-binding', '${_SERVICE_NAME}-${_DEPLOY_REGION_3}', '--member="allUsers"', '--role="roles/run.invoker"', '--region=${_DEPLOY_REGION_3}']
+  # # Step 4: Set IAM policy bindings for unauthenticated access
+  # - name: 'gcr.io/cloud-builders/gcloud'
+  #   args: ['run', 'services', 'add-iam-policy-binding', '${_SERVICE_NAME}-${_DEPLOY_REGION_1}', '--member="allUsers"', '--role="roles/run.invoker"', '--region=${_DEPLOY_REGION_1}']
+  # - name: 'gcr.io/cloud-builders/gcloud'
+  #   args: ['run', 'services', 'add-iam-policy-binding', '${_SERVICE_NAME}-${_DEPLOY_REGION_2}', '--member="allUsers"', '--role="roles/run.invoker"', '--region=${_DEPLOY_REGION_2}']
+  # - name: 'gcr.io/cloud-builders/gcloud'
+  #   args: ['run', 'services', 'add-iam-policy-binding', '${_SERVICE_NAME}-${_DEPLOY_REGION_3}', '--member="allUsers"', '--role="roles/run.invoker"', '--region=${_DEPLOY_REGION_3}']
 
 options:
   logging: CLOUD_LOGGING_ONLY
