@@ -9,3 +9,4 @@ FROM nginx:alpine
 
 COPY .nginx.conf /ect.nginx/nginx.conf
 COPY --from=build /app/build /usr/share/nginx/html
+
