@@ -50,7 +50,7 @@ options:
   logging: CLOUD_LOGGING_ONLY
 
 substitutions:
-  _SERVICE_NAME: 'REACT'
+  _SERVICE_NAME: 'react'
   _DEPLOY_REGION_1: 'us-central1'
   _DEPLOY_REGION_2: 'europe-west1'
   _DEPLOY_REGION_3: 'asia-east1'
