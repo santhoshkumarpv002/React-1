@@ -18,8 +18,8 @@ steps:
       - '--allow-unauthenticated'
 
 options:
-  machineType: 'e2-standard-2'
-  diskSizeGb: 100
+  # machineType: 'e2-standard-2'
+  # diskSizeGb: 100
   logging: CLOUD_LOGGING_ONLY
 
 substitutions:
