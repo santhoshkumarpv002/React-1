@@ -17,7 +17,9 @@ steps:
       - '${_REGION}'
       - '--allow-unauthenticated' 
       - '--port'
-      - '3000'
+      - '3000' 
+      - '--set-env-vars'
+      - 'PORT=3000'
 
 options:
   # machineType: 'e2-standard-2'
