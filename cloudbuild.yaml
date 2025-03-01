@@ -5,7 +5,17 @@ steps:
     args: ['push', 'gcr.io/${PROJECT_ID}/${_SERVICE_NAME}']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
-    args:
+    # args:
+    #   - 'run'
+    #   - 'deploy'
+    #   - '${_SERVICE_NAME}'
+    #   - '--image'
+    #   - 'gcr.io/${PROJECT_ID}/${_SERVICE_NAME}'
+    #   - '--platform'
+    #   - 'managed'
+    #   - '--region'
+    #   - '${_REGION}'
+args:
       - 'run'
       - 'deploy'
       - '${_SERVICE_NAME}'
@@ -13,8 +23,10 @@ steps:
       - 'gcr.io/${PROJECT_ID}/${_SERVICE_NAME}'
       - '--platform'
       - 'managed'
-      - '--region'
-      - '${_REGION}'
+      - '--regions'
+      - 'us-central1,us-east1,europe-west1'
+      - '--zones'
+      - 'us-central1-a,us-east1-b,europe-west1-b'
       - '--allow-unauthenticated' 
       - '--port'
       - '3000' 
