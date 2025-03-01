@@ -47,6 +47,7 @@ steps:
   #   args: ['run', 'deploy', '${_SERVICE_NAME}-${_DEPLOY_REGION_3}', '--image', 'gcr.io/${PROJECT_ID}/${_SERVICE_NAME}', '--region', '${_DEPLOY_REGION_3}','--allow-unauthenticated','--port', '3000']
 
 
+
 options:
   logging: CLOUD_LOGGING_ONLY
 
