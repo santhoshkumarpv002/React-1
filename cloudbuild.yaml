@@ -40,11 +40,11 @@ steps:
 
   # Step 3: Deploy to multiple regions
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['run', 'deploy', 'my-app-us-central1', '--image', 'gcr.io/${PROJECT_ID}/${_SERVICE_NAME}', '--region', 'us-central1']
+    args: ['run', 'deploy', 'my-app-us-central1', '--image', 'gcr.io/${PROJECT_ID}/${_SERVICE_NAME}', '--region','${_DEPLOY_REGION_1}','--allow-unauthenticated','--port', '3000']
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['run', 'deploy', 'my-app-europe-west1', '--image', 'gcr.io/${PROJECT_ID}/${_SERVICE_NAME}', '--region', 'europe-west1']
+    args: ['run', 'deploy', 'my-app-europe-west1', '--image', 'gcr.io/${PROJECT_ID}/${_SERVICE_NAME}', '--region', '${_DEPLOY_REGION_2}','--allow-unauthenticated','--port', '3000']
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['run', 'deploy', 'my-app-asia-east1', '--image', 'gcr.io/${PROJECT_ID}/${_SERVICE_NAME}', '--region', 'asia-east1']
+    args: ['run', 'deploy', 'my-app-asia-east1', '--image', 'gcr.io/${PROJECT_ID}/${_SERVICE_NAME}', '--region', '${_DEPLOY_REGION_3}','--allow-unauthenticated','--port', '3000']
 
 options:
   logging: CLOUD_LOGGING_ONLY
